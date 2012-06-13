@@ -5,6 +5,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 header("Content-type: application/force-download");
+header('Content-Disposition: attachment; filename="TEDx-' . $_GET["type"] . '.png"');
 
 switch ($_GET["type"]) {
 	case '1':	tedx("w", 240, 420, 136, 32, 170, 395, 170);	break;
