@@ -7,15 +7,14 @@ form{background: #ff5; border: solid 2px #dd3; padding: 15px 20px; margin: 0 0 2
 input{border: solid 1px #dd3; font: 24px/30px verdana; margin: 0 0 0 10px; padding: 6px 10px; width: 200px;}
 </style>
 
-<form action="/creator/">Type TEDx Event Name:
+<form action=".">Type TEDx Event Name:
 <input type="text" name="name" value="<?php echo $_GET["name"]; ?>" /></form>
 <p style="font: bold 16px/20px verdana; padding: 0 15px 0 230px;">Click to download:</p>
 <div class="col">
 <?php
 for ($i=1; $i<9; $i++) {
 	if ($i == 5) echo '</div><div class="col">';
-	//$path = '/creator/image.php?name=' . (isset($_GET["name"]) ? $_GET["name"] : "Name") . '&type=' . $i;
-	$path = '/creator/TEDx' . (isset($_GET["name"]) ? urlencode($_GET["name"]) : "Name") . $i . '.png';
+	$path = 'image.php?name=' . (isset($_GET["name"]) ? $_GET["name"] : "Name") . '&type=' . $i;
 	echo '<a href="', $path, '"><img src="', $path, '" /></a>';
 }
 ?>
